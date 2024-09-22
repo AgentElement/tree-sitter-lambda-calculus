@@ -1,7 +1,7 @@
 {
   "name": "tree-sitter-lambda-calculus",
   "version": "0.0.1",
-  "description": "LambdaCalculus grammar for tree-sitter",
+  "description": "Lambda Calculus grammar for tree-sitter",
   "repository": "github:tree-sitter/tree-sitter-lambda-calculus",
   "license": "MIT",
   "main": "bindings/node",
@@ -46,8 +46,17 @@
   },
   "tree-sitter": [
     {
-      "scope": "source.lambda_calculus",
-      "injection-regex": "^lambda_calculus$"
+      "scope": "source.lc",
+      "file-types": [
+        "lc",
+        "lambda_calculus",
+        "lambda"
+      ],
+      "injection-regex": "^lambda_calculus$",
+      "content-regex": "[.()\\a-z0-9_]*",
+      "highlights": "queries/highlights.scm",
+      "injections": "queries/injections.scm",
+      "locals": "queries/locals.scm"
     }
   ]
 }

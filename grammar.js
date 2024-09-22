@@ -12,12 +12,16 @@ module.exports = grammar({
   rules: {
     source_file: $ => repeat($.expression),
     expression: $ => choice(
-      $.abstraction,
+      field("function", $.abstraction),
       seq('(', $.term, ')'),
-      $.ident,
+      field("var", $.ident),
     ),
     ident: $ => /[a-z][a-z0-9_]*/,
-    abstraction: $ => seq('\\', $.ident, '.', $.term),
+    abstraction: $ => seq(
+      '\\',
+      field("capture", $.ident),
+      '.',
+      field("body", $.term)),
     term: $ => choice(
       $.expression,
       prec.left(1, seq($.expression, $.term))
