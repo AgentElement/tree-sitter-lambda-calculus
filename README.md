@@ -1,4 +1,4 @@
-#tree-sitter-lambda-calculus
+# tree-sitter-lambda-calculus
 
 Now even pure lambda calculus has context-aware syntax highlighting!
 
