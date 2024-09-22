@@ -1,0 +1,46 @@
+================================================================================
+Y COMBINATOR
+================================================================================
+
+\f.(\x. f (x x))(\x. f (x x))
+
+---
+
+(source_file
+  (expression
+    (abstraction
+      (ident)
+      (term
+        (expression
+          (term
+            (expression
+              (abstraction
+                (ident)
+                (term
+                  (expression
+                    (ident))
+                  (term
+                    (expression
+                      (term
+                        (expression
+                          (ident))
+                        (term
+                          (expression
+                            (ident)))))))))))
+        (term
+          (expression
+            (term
+              (expression
+                (abstraction
+                  (ident)
+                  (term
+                    (expression
+                      (ident))
+                    (term
+                      (expression
+                        (term
+                          (expression
+                            (ident))
+                          (term
+                            (expression
+                              (ident))))))))))))))))
